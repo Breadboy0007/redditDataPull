@@ -25,7 +25,7 @@ df2 = pd.DataFrame()
     
 def getPushshiftData(after, before, subred):
     def fire_away(after=after, before=before, subred=subred):
-        url = 'https://api.pushshift.io/reddit/search/comment/?subreddit='+str(subred)+'&after='+str(after)+'&before='+str(before)+'&sort=desc&aggs=link_id'
+        url = 'https://api.pushshift.io/reddit/search/comment/?subreddit={subred}&after={after}&before={before}&sort=desc&aggs=link_id'.format(subred=subred,after=after,before=before)
         response = requests.get(url)
         assert response.status_code == 200
         data = json.loads(response.content)
