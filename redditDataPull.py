@@ -96,10 +96,10 @@ def loopAndCreateDF(numPerDay, subred):
         e += 1
     df2.loc[len(df)] = 0
     df2 = df2.shift(1)
-    df2.to_csv('red'+str(subred)+'.csv')
+    #df2.to_csv('red'+str(subred)+'.csv')
 
 
 loopAndCreateDF(n, 'politics')
 
     
-print("--- %s seconds ---" % (time.time() - start_time))
+print((time.time() - start_time)/60)
