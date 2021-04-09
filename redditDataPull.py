@@ -16,8 +16,9 @@ start_time = time.time()
 
 df = pd.read_csv('spy_30Min2yrsNum2.csv')
 
-title = [[]]*20
-doc_count = [[]]*20
+n = 20
+title = [[]]*n
+doc_count = [[]]*n
 beforelist = []
 afterlist = []
 df2 = pd.DataFrame()
@@ -98,7 +99,7 @@ def loopAndCreateDF(numPerDay, subred):
     df2.to_csv('red'+str(subred)+'.csv')
 
 
-loopAndCreateDF(20, 'politics')
+loopAndCreateDF(n, 'politics')
 
     
 print("--- %s seconds ---" % (time.time() - start_time))
